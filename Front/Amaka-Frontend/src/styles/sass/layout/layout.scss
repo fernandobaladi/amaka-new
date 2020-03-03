@@ -1,0 +1,16 @@
+.am-section{
+    min-height: 100vh;
+    // max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+
+    &.am-section--full{
+        max-width: initial;
+    }
+}
+
+.am-body-full{
+    min-height: 100vh;
+    display: block;
+    font-family: $font-family-primary;
+}

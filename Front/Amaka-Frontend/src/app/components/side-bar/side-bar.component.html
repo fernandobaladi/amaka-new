@@ -1,0 +1,19 @@
+<section class="overlay-wrapper" [ngClass]="{'show': status}">
+    <div class="overlay" [ngClass]="{'show': status}" (click)='toggleSideBar()' >
+        <div class="close-btn">
+            <img src="https://static.thenounproject.com/png/26894-200.png">
+        </div>
+    </div>
+    <div class="side-bar-wrapper" [ngClass]="{'show': status}">
+        <div class="title-box">
+            <img src="../../../assets/shopping-cart.png">
+            <span> Carrito </span>
+        </div>
+        <div class="text-box">
+            <span class="title title-clickeable" *ngFor="let product of products" (click)='toggleSideBar()'>
+                    Producto: {{ product.name }} , cantidad: {{ product.quantity}}
+            </span>
+        </div>
+    </div>
+</section>
+

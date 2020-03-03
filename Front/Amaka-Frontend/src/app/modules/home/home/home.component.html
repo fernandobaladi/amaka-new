@@ -1,0 +1,34 @@
+<section class="am-section">
+    <div class="container">
+        <div class="row am-tag">
+            <div class="col-12 col-md-6 col-lg-8">
+                Amaka
+            </div>
+            <div class="col-2 side-bar-btn" (click)=toggleSideBar()>
+                <img src="../../../assets/shopping-cart.png">
+            </div>
+            <!-- <div class="col-12 col-md-6 col-lg-4">
+                <input class="form-control" placeholder="Buscar por nombre" [(ngModel)]="searchName" />
+            </div> -->
+        </div>
+        <div class="row am-thumbnail-wrapper">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2 " *ngFor="let product of productsAvailable">
+                <div class="am-thumbnail">
+                    <div class="am-thumbnail-img">
+                        <img [src]="product.img">
+                    </div>
+                    <div class="am-thumbnail-title" (click)="seleccionado(product)">
+                        <div class="name">
+                            <span>{{product.name}}</span>
+                        </div>
+                        <div class="info">
+                            <span>{{product.price}}</span>
+                            <span>{{product.type}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

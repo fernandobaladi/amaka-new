@@ -1,0 +1,117 @@
+@import "../../../../styles/sass/lib/variables";
+@import "../../../../styles/sass/lib/mixings";
+
+.gt-section {
+  margin-bottom: 0;
+
+  .products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .products-wrapper {
+      color: white;
+      padding: 2rem;
+      position: relative;
+      min-height: 100vh;
+
+      .table-title {
+        color: black;
+        background-color: $color-primary;
+      }
+
+      .products-sort-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        img {
+          height: 30px;
+          width: 30px;
+          margin-right: 0.5rem;
+        }
+        select.form-control {
+          background-color: $color-secondary;
+          width: 250px;
+        }
+      }
+      .products-pipe-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        img {
+          height: 30px;
+          width: 30px;
+          margin-right: 0.5rem;
+        }
+        input.form-control {
+          background-color: $color-secondary;
+          width: 250px;
+        }
+      }
+
+      .products-table {
+        background-color: $color-terciary;
+        color: white;
+
+        // font-size: 1rem;
+
+        .book {
+          background-color: $color-secondary;
+          color: black;
+          //   font-size: .8rem;
+        }
+      }
+    }
+  }
+}
+
+.title-row {
+  min-width: 100%;
+  background-color: $color-primary;
+  font-size: 2rem;
+  font-family: $font-family-primary;
+  color: white;
+  box-shadow: $box-shadow;
+  text-align: start;
+  margin-bottom: 1rem;
+  padding-left: 3rem;
+
+  // @include phone {
+  //   text-align: center;
+  //   padding-left: 0;
+  // }
+  // @include big-phone {
+  //   text-align: center;
+  //   padding-left: 0;
+  // }
+  // @include tablet {
+  //   text-align: center;
+  //   padding-left: 0;
+  // }
+}
+
+.products-add-btn {
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.3rem;
+
+  // @include phone {
+  //   justify-content: center;
+  //   padding-bottom: 0.2rem;
+  // }
+  // @include big-phone {
+  //   justify-content: center;
+  //   padding-bottom: 0.2rem;
+  // }
+  // @include tablet {
+  //   justify-content: center;
+  //   padding-bottom: 0.2rem;
+  // }
+}

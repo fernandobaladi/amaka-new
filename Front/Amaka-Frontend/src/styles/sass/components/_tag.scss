@@ -1,0 +1,38 @@
+.am-tag{
+
+    height: auto;
+    min-width: $tag-min-width;
+    background-color: $color-secondary;
+    font-size: 2rem;
+    font-family: $font-family-primary;
+    color: white;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    
+    //alinean en y
+    vertical-align: middle;
+    padding: 2rem;
+
+}
+
+.am-tag-table{
+    
+    min-width: 100%;
+    background-color: $color-primary;
+    font-size: 2rem;
+    font-family: $font-family-primary;
+    color: white;
+    box-shadow: $box-shadow;
+    text-align: start;
+    margin-bottom: 1rem;
+    padding-left: 3rem;
+
+    @include phone{
+        text-align: center;
+        padding-left: 0;
+    }
+    // margin-left: 1rem;
+    // margin-right: 1rem;
+    // padding-left: 2rem;
+}

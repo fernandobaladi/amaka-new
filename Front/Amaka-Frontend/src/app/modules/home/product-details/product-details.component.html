@@ -1,0 +1,56 @@
+<section class="am-section">
+    <div class="container text-wrapper">
+        <div class="row">
+            <div class="col-12 title">
+                <h1>
+                    {{selectedProduct?.name | uppercase }}
+                    <!-- Lucky Charms -->
+                </h1>
+                <img src="https://image.flaticon.com/icons/png/512/0/340.png" routerLink="/home">
+            </div>
+            <div class="col-2 side-bar-btn" (click)=toggleSideBar()>
+                <img src="../../../assets/shopping-cart.png">
+            </div>
+        </div>
+        <div class="row info-wrapper">
+            <div class="col-12 col-md-6 col-lg-6 product-poster">
+                <img [src]="selectedProduct.img">
+                <!-- src="https://www.nestle-cereals.com/co/sites/g/files/qirczx471/f/styles/scale_312/public/product_gallery/luckycharms-297g-a.png?itok=AXziGyk1" -->
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 product-info">
+                <div class="row">
+                    <div class="col-12 product-subtitle">
+                        <span>Tamaño: {{selectedProduct.size}}</span>
+                    </div>
+                    <div class="col-12 product-subtitle">
+                        <span>Precio: {{selectedProduct.price}}</span>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="row form form-box">
+                            <div class="col-12">
+                                <form [formGroup]="productsQuantityForm">
+                                    <div class="form-row">
+                                        <div class="col-12 col-md-7 form-group">
+                                            <label>
+                                                Cantidad:
+                                            </label>
+                                            <input type="number" min=1 class="form-control" formControlName="quantity"
+                                                onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn am-btn am-btn--primary"
+                                            (click)="addProduct()"
+                                                [disabled]="productsQuantityForm.invalid">
+                                                Agregar al carrito
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,180 @@
+// modal para los cruds de admin
+.overlay-modal-wrapper {
+    position: fixed;
+    min-width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+  
+    &.show {
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    .overlay-modal {
+      background: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      min-width: 100vw;
+      position: fixed;
+  
+      &.show {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  
+    //modal que contiene un formulario (admin)
+  
+    .modal-wrapper {
+      min-width: 100vw;
+      min-height: 100vh;
+      position: fixed;
+      transition: 0.3s;
+      z-index: 140;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      &.show {
+        opacity: 1;
+        visibility: visible;
+      }
+  
+      .am-admin-modal {
+        width: 700px;
+        // min-height: auto;
+       
+  
+        @include big-phone {
+          width: 80vw;
+        }
+  
+        .form-box{
+          max-height: 85vh;
+          overflow: auto;
+        }
+  
+        .title {
+          margin-top: 1rem;
+          position: relative;
+          background-color: $color-primary;
+          width: 100%;
+          text-align: center;
+          color: white;
+        }
+  
+        .checkbox-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-bottom: 0.5rem;
+        }
+  
+        .form {
+          color: black;
+          font-size: 1rem;
+          background-color: $color-terciary;
+          padding: 1rem 0;
+          
+          img{
+            height: 60px;
+            width: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+          }
+  
+          .buttons {
+            display: flex;
+            justify-content: space-between;
+          }
+  
+          input.form-control {
+            color: black;
+            background-color: $color-secondary;
+          }
+  
+          select.form-control {
+            color: black;
+            background-color: $color-secondary;
+          }
+  
+          textarea.form-control {
+            color: black;
+            background-color: $color-secondary;
+          }
+  
+          // wrapper que contiene las opciones y sus respectivos cuadritos de seleccionado o no 
+          .multiselect-wrapper{
+            max-height: 100px;
+            overflow: auto;
+            min-width: 100px;
+  
+            .multiselect-option{
+              display: flex;
+              justify-content: flex-start;
+  
+              img{
+                height: 20px;
+                width: 20px;
+                margin-right: 1rem;
+                filter: invert(1);
+              }
+            }
+          }
+  
+          //Componentes que sirven para que el usuario pueda agregar varias cosas. 
+          //ej: varios servicios a un destino o varias img a un hotel
+  
+          //caja donde se colocaran los servicios/actividades u otros que añada el usuario
+          .multiadd-box{
+            height: 100px;
+            max-width: 100%;
+            overflow: auto;
+            border-radius: 0.25rem;
+            margin-bottom: 0.75rem;
+            // min-width: 70%;
+            background-color: $color-secondary;
+            color: black;
+  
+            .image-additional-box{
+              width: 70px;
+              height: 70px;
+              position: relative;
+  
+              .close-btn{
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                cursor: pointer;
+              }
+            }
+  
+            img{
+              width: 60px;
+              height: 60px;
+            }
+          }
+  
+          //Caja que incluye la barra del input o de seleccion de imagen y el boton de agregar (+)
+          .input-box{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          
+            .input-bar{
+              max-width: 85%;
+            }
+            
+          }
+        }
+      }
+    }
+  }
+  
+  
+  

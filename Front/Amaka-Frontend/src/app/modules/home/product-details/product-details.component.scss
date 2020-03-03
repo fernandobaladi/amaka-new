@@ -1,0 +1,46 @@
+@import "./../../../../styles/sass/lib/variables";
+
+.text-wrapper {
+    height: auto;
+    font-family: $font-family-primary;
+    color: white;
+  
+    .title {
+      margin-top: 1rem;
+      position: relative;
+      background-color: $color-secondary;
+      height: 50px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 4px 4px 2px #00000052;
+  
+      img {
+        position: absolute;
+        top: 0.5rem;
+        left: 1rem;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+}
+
+.product-poster {
+    height: 450px;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+}
+
+.product-info{
+    padding-top: 2rem;
+    color: black;
+    font-size: 1.5rem;
+}

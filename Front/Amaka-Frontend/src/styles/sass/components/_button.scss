@@ -1,0 +1,17 @@
+button.am-btn {
+    height: $btn-height;
+    min-width: $btn-min-width;
+    box-shadow: $button-shadow;
+    font-size: 1rem;
+    font-family: $font-family-primary;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  
+    &.am-btn--primary {
+      background-color: $button-color;
+      color:black;
+    }
+  }
+  

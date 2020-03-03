@@ -1,0 +1,132 @@
+<section class="am-section am-section--full">
+    <div class="products">
+        <div class="container-fluid products-wrapper">
+            <div class="row cities-pipes">
+                <!-- <div class="col-12 col-md-4 col-lg-4">
+                    <div class="cities-sort-wrapper">
+                        <img src="../../../../assets/img/filter.png">
+                        <select [(ngModel)]="optionSort" class="form-control">
+                            <option selected value=''> Ordenar por: </option>
+                            <option value="1"> Nombre </option>
+                            <option value="2"> Status </option>
+                            <option value="3"> Estado </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4">
+                    <div class=" cities-pipe-wrapper">
+                        <img src="../../../../assets/img/loupe.png">
+                        <input class="form-control" placeholder="Nombre/Estado" [(ngModel)]="search"/>
+                    </div>
+                </div> -->
+                
+            </div>
+            <div class="row title-row">
+                <div class="col-8 col-md-8 col-lg-8">
+                    <!-- <div class=" am-tag-table"> -->
+                        <span>
+                            Productos
+                        </span>
+                    <!-- </div> -->
+                </div>
+                <div class="col-4 col-md-4 col-lg-4">
+                    <div class="products-add-btn">
+                        <button class="btn gt-btn gt-btn--secondary" type="menu" (click)="openModal()">
+                            Añadir +
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table products-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Tamaño</th>
+                            <th scope="col">Precio</th>
+                            <!-- <th scope="col">Status</th> -->
+                            <th scope="col"></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr class="product" *ngFor="let product of products  | generalSort: optionSort | filter: search"> -->
+                        <tr class="product" *ngFor="let product of products">
+                            <th scope="row">{{product.name}}</th> 
+                            <td>{{product.size}}</td>
+                            <td>{{product.price}}</td>
+                            <button class="btn am-btn am-btn--primary" type="menu" (click)="openModal(product)">
+                                Editar
+                            </button>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- comienzo del modal -->
+<section class="overlay-modal-wrapper" [ngClass]="{'show': modalStatus|async}">
+    <div class="overlay-modal" [ngClass]="{'show': modalStatus|async}">
+    </div>
+    <div class="modal-wrapper" [ngClass]="{'show': modalStatus|async}">
+        <div class="am-admin-modal">
+            <div class="row">
+                <div class="col-12 title">
+                    <h1>
+                        Producto
+                    </h1>
+                </div>
+            </div>
+            <div class="row form form-box">
+                <div class="col-12">
+                    <form [formGroup]="productsForm">
+                        <div class="form-row">
+                            <div class="col-12 col-md-6 form-group">
+                                <label>
+                                    Nombre
+                                </label>
+                                <input type="text" class="form-control" formControlName="name">
+                            </div>
+                            <div class="col-12 col-md-6 form-group">
+                                <label>
+                                    Tamaño
+                                </label>
+                                <input type="text" class="form-control" formControlName="size">
+                            </div>
+                            <div class="col-12 col-md-6 form-group">
+                                <label>
+                                    Precio
+                                </label>
+                                <input type="number" class="form-control" formControlName="price">
+                            </div>
+                            <!-- <div class="col-12 col-md-6 form-group">
+                                <label>
+                                    Status
+                                </label>
+                                <select formControlName="status" class="form-control">
+                                    <option selected value=''> Seleccionar: </option>
+                                    <option value="1"> Cancelado </option>
+                                    <option value="2"> Pagado </option>
+                                    <option value="3"> Por Confirmar </option>
+                                </select>
+                            </div> -->
+                            <div class="col-12 buttons">
+                                <button class="btn am-btn am-btn--primary " type="submit"
+                                    [disabled]="productsForm.invalid" (click)="saveChanges()">
+                                    Guardar
+                                </button>
+                                <button class="btn am-btn am-btn--primary" type="button"
+                                    (click)="toggleModalStatus()">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
